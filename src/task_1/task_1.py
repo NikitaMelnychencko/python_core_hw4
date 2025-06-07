@@ -3,15 +3,19 @@ from pathlib import Path
 def total_salary(path):
     total = 0
     count = 0
-    with open(path, 'r' , encoding='utf-8') as file:
-        #line_count = sum(1 for line in file) (good way)
-        for line in file:
-            name, salary = line.split(',')
-            count += 1
-            try:
-                total += int(salary)
-            except ValueError:
-                print(f"{salary} is not a number")
+    try:
+        with open(path, 'r' , encoding='utf-8') as file:
+            #line_count = sum(1 for line in file) (good way)
+            for line in file:
+                name, salary = line.split(',')
+                try:
+                    total += int(salary)
+                    count += 1
+                except ValueError:
+                    print(f"{salary} is not a number")
+    except FileNotFoundError:
+        print("File not found")
+        return (0, 0)
 
     return (total, total/count)
 
