@@ -22,9 +22,10 @@ def get_cats_info(path):
 
     return cats_info
 
+if __name__ == "__main__":
 
-file_name = Path(__file__).parent / 'cats.txt'
+    file_name = Path(__file__).parent / 'cats.txt'
 
-result = get_cats_info(file_name)
+    result = get_cats_info(file_name)
 
-print(result)
+    print(result)

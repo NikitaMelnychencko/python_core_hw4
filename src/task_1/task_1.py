@@ -19,9 +19,12 @@ def total_salary(path):
 
     return (total, total/count)
 
-file_name = Path(__file__).parent / 'sallary.txt'
 
-result = total_salary(file_name)
+if __name__ == "__main__":
 
-print("Total salary:", result[0])
-print("Average salary:", result[1])
+    file_name = Path(__file__).parent / 'sallary.txt'
+
+    result = total_salary(file_name)
+
+    print("Total salary:", result[0])
+    print("Average salary:", result[1])
