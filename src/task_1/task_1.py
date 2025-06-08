@@ -9,7 +9,7 @@ def total_salary(path):
             for line in file:
                 name, salary = line.split(',')
                 try:
-                    total += int(salary)
+                    total += float(salary)
                     count += 1
                 except ValueError:
                     print(f"{salary} is not a number")
